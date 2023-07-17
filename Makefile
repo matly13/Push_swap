@@ -2,7 +2,21 @@ NAME = push_swap
 
 SRC = main.c
 
-SRCS = error.c
+SRCS = error.c swap.c rotate.c reverse.c
+
+# ANSII COLOR
+
+RED		= \033[0;31m
+BLACK	= \033[1;30m
+WHITE	= \033[1;37m
+BLUE	= \033[1;34m
+YELLOW2  = \033[93;226m
+GREEN2   = \033[92;118m
+GREEN   = \e[92;5;118m
+YELLOW  = \e[93;5;226m
+GRAY    = \e[33;2;37m
+RESET   = \e[0m
+CURSIVE = \e[33;3m
 
 OBJS = $(SRCS:.c=.o)
 OBJ = $(SRC:.c=.o)
@@ -15,7 +29,8 @@ LIBRARY := libs/libft/libft.a libs/ft_printf/libftprintf.a
 
 CC = gcc -Wall -Wextra -Werror -g
 
-.c.o = ${CC} -c $< -o ${<:.c=.o}
+.c.o:
+	@${CC} -c $< -o ${<:.c=.o} > /dev/null
 
 $(NAME): ${OBJS} $(OBJ)
 	@printf "$(CURSIVE)$(YELLOW) 	- Compiling libft ... $(RESET)\n"
