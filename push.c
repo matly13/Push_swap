@@ -1,49 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse.c                                          :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbasile <mbasile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/26 12:11:59 by mbasile           #+#    #+#             */
-/*   Updated: 2023/07/17 17:25:23 by mbasile          ###   ########.fr       */
+/*   Created: 2023/07/17 17:26:37 by mbasile           #+#    #+#             */
+/*   Updated: 2023/07/17 18:00:59 by mbasile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rra(t_stack *stack, int p)
+void	pa(t_stack *stack, int p)
 {
 	int	i;
 	int	tmp;
-	
-	i = stack->size_a - 1;
-	tmp = stack->a[i];
+
+	i = -1;
+	tmp = stack->b[0];
+	while (++i < stack->size_b - 1)
+		stack->b[i] = stack->b[i + 1];
+	i = stack->size_a;
 	while (--i >= 0)
-		stack->a[i + 1] = stack->a[i];
+		stack->a[i] = stack->a[i + 1];
 	stack->a[0] = tmp;
+	stack->size_a++;
+	stack->size_b--;
 	if (p == 1)
-		write(1, "rra\n", 3);
+		write(1, "pa\n", 3);
 }
 
-void	rrb(t_stack *stack, int p)
+void	pb(t_stack *stack, int p)
 {
 	int	i;
 	int	tmp;
-	
-	i = stack->size_b - 1;
-	tmp = stack->b[i];
-	while (--i >= 0)
-		stack->b[i + 1] = stack->b[i];
-	stack->b[0] = tmp;
-	if (p == 1)
-		write(1, "rrb\n", 3);
-}
 
-void	rrr(t_stack *stack, int p)
-{
-	rra(stack, 0);
-	rrb(stack, 0);
+	i = -1;
+	tmp = stack->a[0];
+	while (++i < stack->size_a - 1)
+		stack->a[i] = stack->a[i + 1];
+	i = stack->size_b;
+	while (--i >= 0)
+		stack->b[i] = stack->b[i + 1];
+	stack->b[0] = tmp;
+	stack->size_b++;
+	stack->size_a--;
 	if (p == 1)
-		write(1, "rrr\n", 3);
+		write(1, "pb\n", 3);
 }

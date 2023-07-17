@@ -6,7 +6,7 @@
 /*   By: mbasile <mbasile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 12:28:01 by mbasile           #+#    #+#             */
-/*   Updated: 2023/07/17 16:39:03 by mbasile          ###   ########.fr       */
+/*   Updated: 2023/07/17 17:54:51 by mbasile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,8 +120,8 @@ int	main(int ac, char **av)
 	while (++i < stack->size_a)
 		printf("%d\n", stack->a[i]);
 	printf("\n\n");
-	rra(stack, 1);
-	printf("\n\nAFTER RRA\n");
+	pa(stack, 1);
+	printf("\n\nAFTER PA\n");
 	i = -1;
 	while (++i < stack->size_a)
 		printf("%d\n", stack->a[i]);

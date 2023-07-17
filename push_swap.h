@@ -6,7 +6,7 @@
 /*   By: mbasile <mbasile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 12:22:56 by mbasile           #+#    #+#             */
-/*   Updated: 2023/07/17 16:38:22 by mbasile          ###   ########.fr       */
+/*   Updated: 2023/07/17 17:54:08 by mbasile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,12 @@ void	ra(t_stack *stack, int p);
 void	rb(t_stack *stack, int p);
 void	rr(t_stack *stack, int p);
 void	rra(t_stack *stack, int p);
+void	rrb(t_stack *stack, int p);
+void	rrr(t_stack *stack, int p);
+void	pa(t_stack *stack, int p);
+void	pb(t_stack *stack, int p);
+
+
+
 
 #endif
