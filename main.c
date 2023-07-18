@@ -6,7 +6,7 @@
 /*   By: mbasile <mbasile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 12:28:01 by mbasile           #+#    #+#             */
-/*   Updated: 2023/07/17 17:54:51 by mbasile          ###   ########.fr       */
+/*   Updated: 2023/07/18 17:13:39 by mbasile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,10 +106,26 @@ void	checkdouble(t_stack *stack)
 		}
 	}
 }
+
+void	sorting(t_stack *stack)
+{
+	
+}
+
+void	check_sorting(t_stack *stack)
+{
+	if (stack->size_a == 2)
+		sort_2(stack);
+	else if (stack->size_a == 3)
+		sort_3(stack);
+	else
+		sorting(stack);
+}
+
 int	main(int ac, char **av)
 {
 	t_stack	*stack;
-	int	i = -1; // serve solo per il check
+	// int	i = -1; // serve solo per il checkk
 
 	stack = ft_calloc(1, sizeof(t_stack));
 	if (ac == 2)
@@ -117,13 +133,22 @@ int	main(int ac, char **av)
 	else if (ac > 2)
 		init_two(stack, av, ac);
 	checkdouble(stack);
-	while (++i < stack->size_a)
-		printf("%d\n", stack->a[i]);
-	printf("\n\n");
-	pa(stack, 1);
-	printf("\n\nAFTER PA\n");
-	i = -1;
-	while (++i < stack->size_a)
-		printf("%d\n", stack->a[i]);
-	return 0;
+	// while (++i < stack->size_a)
+	// 	printf("%d\n", stack->a[i]);
+	// printf("\n\n");
+	// pb(stack, 1);
+	// pb(stack, 1);
+	// printf("\n\nAFTER PA\n");
+	// i = -1;
+	// while (++i < stack->size_b - 1)
+	// 	printf("%d\n", stack->b[i]);
+	// pb(stack, 0);
+	// pb(stack, 0);
+	// pb(stack, 0);
+	// check_maxmin_b(stack);
+	// printf("max_a: %d -- min_a %d\n", stack->max_b, stack->min_b);
+	if (check_sort(stack))
+		check_sorting(stack);
+	printf("lo stack e'gia sortato\n");
+	return (0);
 }

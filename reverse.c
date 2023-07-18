@@ -6,7 +6,7 @@
 /*   By: mbasile <mbasile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 12:11:59 by mbasile           #+#    #+#             */
-/*   Updated: 2023/07/17 17:25:23 by mbasile          ###   ########.fr       */
+/*   Updated: 2023/07/18 15:59:33 by mbasile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	rra(t_stack *stack, int p)
 		stack->a[i + 1] = stack->a[i];
 	stack->a[0] = tmp;
 	if (p == 1)
-		write(1, "rra\n", 3);
+		write(1, "rra\n", 4);
 }
 
 void	rrb(t_stack *stack, int p)
@@ -37,7 +37,7 @@ void	rrb(t_stack *stack, int p)
 		stack->b[i + 1] = stack->b[i];
 	stack->b[0] = tmp;
 	if (p == 1)
-		write(1, "rrb\n", 3);
+		write(1, "rrb\n", 4);
 }
 
 void	rrr(t_stack *stack, int p)
@@ -45,5 +45,5 @@ void	rrr(t_stack *stack, int p)
 	rra(stack, 0);
 	rrb(stack, 0);
 	if (p == 1)
-		write(1, "rrr\n", 3);
+		write(1, "rrr\n", 4);
 }

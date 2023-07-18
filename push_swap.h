@@ -6,7 +6,7 @@
 /*   By: mbasile <mbasile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 12:22:56 by mbasile           #+#    #+#             */
-/*   Updated: 2023/07/17 17:54:08 by mbasile          ###   ########.fr       */
+/*   Updated: 2023/07/18 17:09:56 by mbasile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ typedef struct s_stack
 	int *b;
 	int size_a;
 	int size_b;
+	int	max_a;
+	int	min_a;
+	int	max_b;
+	int	min_b;
 
 } t_stack;
 
@@ -44,6 +48,15 @@ void	rrb(t_stack *stack, int p);
 void	rrr(t_stack *stack, int p);
 void	pa(t_stack *stack, int p);
 void	pb(t_stack *stack, int p);
+int		check_sort(t_stack *stack);
+
+void	check_maxmin_a(t_stack *stack);
+void	check_maxmin_b(t_stack *stack);
+void	sort_3(t_stack *stack);
+void	sort_2(t_stack *stack);
+void	sorting(t_stack *stack);
+void	check_sorting(t_stack *stack);
+
 
 
 

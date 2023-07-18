@@ -6,7 +6,7 @@
 /*   By: mbasile <mbasile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 17:26:37 by mbasile           #+#    #+#             */
-/*   Updated: 2023/07/17 18:00:59 by mbasile          ###   ########.fr       */
+/*   Updated: 2023/07/18 17:02:14 by mbasile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void	pa(t_stack *stack, int p)
 	stack->a[0] = tmp;
 	stack->size_a++;
 	stack->size_b--;
+	check_maxmin_a(stack);
+	check_maxmin_b(stack);
 	if (p == 1)
 		write(1, "pa\n", 3);
 }
@@ -46,6 +48,8 @@ void	pb(t_stack *stack, int p)
 	stack->b[0] = tmp;
 	stack->size_b++;
 	stack->size_a--;
+	check_maxmin_a(stack);
+	check_maxmin_b(stack);
 	if (p == 1)
 		write(1, "pb\n", 3);
 }
