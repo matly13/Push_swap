@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbasile <mbasile@student.42.fr>            +#+  +:+       +#+        */
+/*   By: martina <martina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 12:28:01 by mbasile           #+#    #+#             */
-/*   Updated: 2023/07/18 17:13:39 by mbasile          ###   ########.fr       */
+/*   Updated: 2023/08/03 11:57:38 by martina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,9 +107,17 @@ void	checkdouble(t_stack *stack)
 	}
 }
 
-void	sorting(t_stack *stack)
+int	check_sort(t_stack *stack)
 {
-	
+	int	i;
+
+	i = 0;
+	while(++i < stack->size_a)
+	{
+		if (stack->a[i] < stack->a[i - 1])
+			return(1);
+	}
+	return (0);
 }
 
 void	check_sorting(t_stack *stack)
@@ -151,4 +159,36 @@ int	main(int ac, char **av)
 		check_sorting(stack);
 	printf("lo stack e'gia sortato\n");
 	return (0);
+}
+
+void pntimes(t_stack *stack, int n)
+{
+    while (n-- > 0)
+        pa(stack, 1);
+}
+
+void quick_sort(t_stack *stack)
+{
+    if (stack->size_a <= 1)
+        return;
+
+    int p = stack->a[stack->size_a - 1];
+    int i = -1;
+    int j = 0;
+
+    while (++i < stack->size_a - 1)
+    {
+        if (stack->a[i] < p)
+        {
+            if (++j != i)
+                sa(stack, 1);
+        }
+    }
+
+    if (++j != stack->size_a - 1)
+         sa(stack, 1);
+            quick_sort(stack);
+                pb(stack, 1);
+            quick_sort(stack);
+                pa(stack, 1);
 }
