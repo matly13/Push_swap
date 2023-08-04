@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbasile <mbasile@student.42.fr>            +#+  +:+       +#+        */
+/*   By: martina <martina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 15:41:26 by mbasile           #+#    #+#             */
-/*   Updated: 2023/07/18 17:05:24 by mbasile          ###   ########.fr       */
+/*   Updated: 2023/08/04 10:54:01 by martina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	sort_2(t_stack *stack)
 {

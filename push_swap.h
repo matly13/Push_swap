@@ -6,7 +6,7 @@
 /*   By: martina <martina@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 12:22:56 by mbasile           #+#    #+#             */
-/*   Updated: 2023/08/03 11:52:43 by martina          ###   ########.fr       */
+/*   Updated: 2023/08/04 13:55:29 by martina          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,31 @@ typedef struct s_stack
 	int	min_a;
 	int	max_b;
 	int	min_b;
+	int	current_a;
+	int	current_b;
+	int	index_maxa;
+	int	index_mina;
+	int	index_maxb;
+	int	index_minb;
 
 } t_stack;
+
+typedef struct s_curr 
+{
+	int	cur_a;
+	int	cur_b;
+	
+} t_curr;
+
+typedef struct s_push
+{
+	int	idx_a;
+	int	idx_b;
+	int	mv;
+	int tmp_moves;
+	int count_moves;
+	
+} t_push;
 
 void	ft_error(void);
 
@@ -57,8 +80,17 @@ void	sort_2(t_stack *stack);
 void	sorting(t_stack *stack);
 void	check_sorting(t_stack *stack);
 
-void	quick_sort(t_stack *stack);
-void	pntimes(t_stack *stack, int n);
+void	ft_close(t_stack *stack);
+void	ft_sorting_a(t_stack *stack);
+void	ft_first(t_stack *stack);
+int		ft_sorting(t_stack *stack);
+void	ft_pushing_to_a(t_stack *stack);
+void    ft_find_maxmin_a(t_stack *stack);
+void	final_sorting(t_stack *stack);
+
+t_push	ft_new_cheapest(int i, int tmp_b, t_push topush);
+t_push	ft_index_under(int i, int tmp_b, t_push topush);
+t_push	ft_index_over(t_stack *stack, int i, int tmp_b, t_push topush);
 
 
 #endif
