@@ -6,7 +6,7 @@
 /*   By: mbasile <mbasile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 12:22:56 by mbasile           #+#    #+#             */
-/*   Updated: 2023/08/05 18:59:43 by mbasile          ###   ########.fr       */
+/*   Updated: 2023/08/05 20:07:28 by mbasile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,15 +77,20 @@ void	sort_2(t_stack *stack);
 void	sorting(t_stack *stack);
 void	check_sorting(t_stack *stack);
 
-//void	ft_sorting_a(t_stack *stack);
-void	ft_first(t_stack *stack);
-int		ft_sorting(t_stack *stack);
-void	ft_pushing_to_a(t_stack *stack);
-void	ft_find_maxmin_a(t_stack *stack);
-void	final_sorting(t_stack *stack);
+int		ft_checkinput(char *str);
+void	case_1(t_stack *stack);
+void	case_2(t_stack *stack);
+void	exec_case_1(t_stack *stack);
+void	exec_case_2(t_stack *stack);
+void	exec_case_3(t_stack *stack);
+void	exec_case_4(t_stack *stack);
+void	exec_mv_to_b(t_stack *stack);
+void	exec_mv_to_a(t_stack *stack);
 
-t_push	ft_new_cheapest(int i, int tmp_b, t_push topush);
-t_push	ft_index_under(int i, int tmp_b, t_push topush);
-t_push	ft_index_over(t_stack *stack, int i, int tmp_b, t_push topush);
+void	final_sort(t_stack *stack);
+void	sorting(t_stack *stack);
+void	find_cheapest_mv_1(t_stack *stack);
+void	find_cheapest_mv_2(t_stack *stack);
+void	checkdouble(t_stack *stack);
 
 #endif

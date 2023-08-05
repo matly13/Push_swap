@@ -6,7 +6,7 @@
 /*   By: mbasile <mbasile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 17:38:26 by mbasile           #+#    #+#             */
-/*   Updated: 2023/08/05 19:16:20 by mbasile          ###   ########.fr       */
+/*   Updated: 2023/08/05 20:30:57 by mbasile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	find_top_a(t_stack *stack, int idx_b)
 	}
 	while (++i < stack->size_a - 1)
 	{
-		if (stack->b[idx_b] > stack->b[i]
+		if (stack->b[idx_b] > stack->a[i]
 			&& stack->b[idx_b] < stack->a[i + 1])
 		{
 			stack->tmp.cur_a = i + 1;
@@ -102,6 +102,7 @@ void	find_cheapest_mv_2(t_stack *stack)
 	while (++i < stack->size_b)
 	{
 		find_top_a(stack, i);
+		printf("idx_a: %d\n", stack->tmp.cur_a);
 		count_mv_2(stack);
 	}
 }

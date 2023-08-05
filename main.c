@@ -6,27 +6,11 @@
 /*   By: mbasile <mbasile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 12:28:01 by mbasile           #+#    #+#             */
-/*   Updated: 2023/08/05 18:58:42 by mbasile          ###   ########.fr       */
+/*   Updated: 2023/08/05 20:20:29 by mbasile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	ft_checkinput(char *str)
-{
-	int	i;
-
-	i = 0;
-	if (str[i] == '-')
-		i++;
-	while (str [i])
-	{
-		if (!ft_isdigit(str[i]))
-			return (0);
-		i++;
-	}
-	return (1);
-}
 
 void	ft_freematrix(char **matrix)
 {
@@ -36,6 +20,14 @@ void	ft_freematrix(char **matrix)
 	while (matrix[++i])
 		free(matrix[i]);
 	free(matrix);
+}
+
+void	init_struct(t_stack *stack, int i)
+{
+	stack->size_a = i;
+	stack->size_b = 0;
+	stack->a = ft_calloc(i, sizeof(int));
+	stack->b = ft_calloc(i, sizeof(int));
 }
 
 void	init_one(t_stack *stack, char **av)
@@ -53,10 +45,7 @@ void	init_one(t_stack *stack, char **av)
 			ft_error();
 		}
 	}
-	stack->size_a = i;
-	stack->size_b = 0;
-	stack->a = ft_calloc(i, sizeof(int));
-	stack->b = ft_calloc(i, sizeof(int));
+	init_struct(stack, i);
 	i = -1;
 	while (matrix[++i])
 	{
@@ -100,6 +89,5 @@ int	main(int ac, char **av)
 	checkdouble(stack);
 	if (check_sort(stack))
 		check_sorting(stack);
-	printf("lo stack e'gia sortato\n");
 	return (0);
 }

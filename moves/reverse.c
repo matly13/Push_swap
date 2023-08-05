@@ -6,24 +6,64 @@
 /*   By: mbasile <mbasile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 12:11:59 by mbasile           #+#    #+#             */
-/*   Updated: 2023/08/05 19:17:54 by mbasile          ###   ########.fr       */
+/*   Updated: 2023/08/05 20:17:43 by mbasile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
+
+// void	rra(t_stack *stack, int p)
+// {
+// 	int	i;
+// 	int	tmp;
+
+// 	i = stack->size_a - 1;
+// 	tmp = stack->a[i];
+// 	while (--i >= 0)
+// 		stack->a[i + 1] = stack->a[i];
+// 	stack->a[0] = tmp;
+// 	if (p == 1)
+// 		write(1, "rra\n", 4);
+// }
+
+// void	rrb(t_stack *stack, int p)
+// {
+// 	int	i;
+// 	int	tmp;
+
+// 	i = stack->size_b - 1;
+// 	tmp = stack->b[i];
+// 	while (--i >= 0)
+// 		stack->b[i + 1] = stack->b[i];
+// 	stack->b[0] = tmp;
+// 	if (p == 1)
+// 		write(1, "rrb\n", 4);
+// }
+
+// void	rrr(t_stack *stack, int p)
+// {
+// 	rra(stack, 0);
+// 	rrb(stack, 0);
+// 	if (p == 1)
+// 		write(1, "rrr\n", 4);
+// }
 
 void	rra(t_stack *stack, int p)
 {
 	int	i;
 	int	tmp;
 
-	i = stack->size_a - 1;
-	tmp = stack->a[i];
-	while (--i >= 0)
-		stack->a[i + 1] = stack->a[i];
+	tmp = stack->a[stack->size_a - 1];
+	i = stack->size_a;
+	while (i > 0)
+	{
+		stack->a[i] = stack->a[i - 1];
+		i--;
+	}
 	stack->a[0] = tmp;
 	if (p == 1)
-		write(1, "rra\n", 4);
+		ft_printf("rra\n");
+	check_maxmin_a(stack);
 }
 
 void	rrb(t_stack *stack, int p)
@@ -31,19 +71,42 @@ void	rrb(t_stack *stack, int p)
 	int	i;
 	int	tmp;
 
-	i = stack->size_b - 1;
-	tmp = stack->b[i];
-	while (--i >= 0)
-		stack->b[i + 1] = stack->b[i];
+	tmp = stack->b[stack->size_b - 1];
+	i = stack->size_b;
+	while (i > 0)
+	{
+		stack->b[i] = stack->b[i - 1];
+		i--;
+	}
 	stack->b[0] = tmp;
 	if (p == 1)
-		write(1, "rrb\n", 4);
+		ft_printf("rrb\n");
+	check_maxmin_b(stack);
 }
 
 void	rrr(t_stack *stack, int p)
 {
-	rra(stack, 0);
-	rrb(stack, 0);
+	int	i;
+	int	tmp;
+
+	tmp = stack->a[stack->size_a - 1];
+	i = stack->size_a;
+	while (i > 0)
+	{
+		stack->a[i] = stack->a[i - 1];
+		i--;
+	}
+	stack->a[0] = tmp;
+	tmp = stack->b[stack->size_b - 1];
+	i = stack->size_b;
+	while (i > 0)
+	{
+		stack->b[i] = stack->b[i - 1];
+		i--;
+	}
+	stack->b[0] = tmp;
 	if (p == 1)
-		write(1, "rrr\n", 4);
+		ft_printf("rrr\n");
+	check_maxmin_a(stack);
+	check_maxmin_b(stack);
 }

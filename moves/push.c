@@ -6,7 +6,7 @@
 /*   By: mbasile <mbasile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 17:26:37 by mbasile           #+#    #+#             */
-/*   Updated: 2023/08/05 17:36:44 by mbasile          ###   ########.fr       */
+/*   Updated: 2023/08/05 20:11:39 by mbasile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,14 +65,14 @@ void	pb(t_stack *stack, int p)
 		i--;
 	}
 	stack->size_b++;
-	stack->b[0] = stack->b[0];
+	stack->b[0] = stack->a[0];
 	i = 1;
-	while (i < stack->size_b)
+	while (i < stack->size_a)
 	{
-		stack->b[i - 1] = stack->b[i];
+		stack->a[i - 1] = stack->a[i];
 		i++;
 	}
-	stack->size_b--;
+	stack->size_a--;
 	if (p == 1)
 		ft_printf("pb\n");
 	check_maxmin_b(stack);
@@ -91,12 +91,12 @@ void	pa(t_stack *stack, int p)
 	stack->size_a++;
 	stack->a[0] = stack->b[0];
 	i = 1;
-	while (i < stack->size_a)
+	while (i < stack->size_b)
 	{
-		stack->a[i - 1] = stack->a[i];
+		stack->b[i - 1] = stack->b[i];
 		i++;
 	}
-	stack->size_a--;
+	stack->size_b--;
 	if (p == 1)
 		ft_printf("pa\n");
 	check_maxmin_a(stack);

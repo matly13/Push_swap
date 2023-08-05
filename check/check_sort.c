@@ -6,9 +6,27 @@
 /*   By: mbasile <mbasile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 18:56:27 by mbasile           #+#    #+#             */
-/*   Updated: 2023/08/05 19:26:11 by mbasile          ###   ########.fr       */
+/*   Updated: 2023/08/05 20:33:31 by mbasile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../push_swap.h"
+
+int	ft_checkinput(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str[i] == '-')
+		i++;
+	while (str [i])
+	{
+		if (!ft_isdigit(str[i]))
+			return (0);
+		i++;
+	}
+	return (1);
+}
 
 void	checkdouble(t_stack *stack)
 {
@@ -31,15 +49,15 @@ void	checkdouble(t_stack *stack)
 
 void	check_sorting(t_stack *stack)
 {
-	int	i;
+	// int	i;
 
-	i = -1;
+	// i = -1;
 	if (stack->size_a == 2)
 		sort_2(stack);
 	else if (stack->size_a == 3)
 		sort_3(stack);
 	else
 		sorting(stack);
-	while (++i < stack->size_b)
-		printf("B[%d] --> %d\n", i, stack->b[i]);
+	// while (++i < stack->size_a)
+	// 	printf("A[%d] --> %d\n", i, stack->a[i]);
 }
