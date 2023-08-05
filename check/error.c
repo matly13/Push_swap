@@ -6,11 +6,11 @@
 /*   By: mbasile <mbasile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 16:44:13 by mbasile           #+#    #+#             */
-/*   Updated: 2023/07/12 16:44:25 by mbasile          ###   ########.fr       */
+/*   Updated: 2023/08/04 18:38:35 by mbasile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	ft_error(void)
 {

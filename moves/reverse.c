@@ -6,11 +6,11 @@
 /*   By: mbasile <mbasile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 12:11:59 by mbasile           #+#    #+#             */
-/*   Updated: 2023/07/18 15:59:33 by mbasile          ###   ########.fr       */
+/*   Updated: 2023/08/04 18:38:35 by mbasile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 void	rra(t_stack *stack, int p)
 {

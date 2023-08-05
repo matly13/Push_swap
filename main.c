@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martina <martina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mbasile <mbasile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/05 12:28:01 by mbasile           #+#    #+#             */
-/*   Updated: 2023/08/04 10:56:05 by martina          ###   ########.fr       */
+/*   Updated: 2023/08/05 11:28:43 by mbasile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,19 +105,6 @@ void	checkdouble(t_stack *stack)
 				ft_error();
 		}
 	}
-}
-
-int	check_sort(t_stack *stack)
-{
-	int	i;
-
-	i = 0;
-	while(++i < stack->size_a)
-	{
-		if (stack->a[i] < stack->a[i - 1])
-			return(1);
-	}
-	return (0);
 }
 
 void	check_sorting(t_stack *stack)

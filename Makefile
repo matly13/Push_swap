@@ -2,7 +2,8 @@ NAME = push_swap
 
 SRC = main.c
 
-SRCS = error.c swap.c rotate.c reverse.c push.c checkmaxmin.c sort_three.c sorting.c sorting_a.c check_to_b.c
+SRCS = check/error.c moves/swap.c moves/rotate.c moves/reverse.c moves/push.c check/checkmaxmin.c sorting/sort_three.c \
+		sorting/sorting.c sorting/sorting_a.c sorting/check_to_b.c
 
 # ANSII COLOR
 

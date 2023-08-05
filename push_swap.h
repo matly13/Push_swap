@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martina <martina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mbasile <mbasile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 12:22:56 by mbasile           #+#    #+#             */
-/*   Updated: 2023/08/04 13:55:29 by martina          ###   ########.fr       */
+/*   Updated: 2023/08/05 11:39:00 by mbasile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,30 +20,11 @@
 # include "libs/libft/libft.h"
 # include "libs/ft_printf/ft_printf.h"
 
-typedef struct s_stack
-{
-	int *a;
-	int *b;
-	int size_a;
-	int size_b;
-	int	max_a;
-	int	min_a;
-	int	max_b;
-	int	min_b;
-	int	current_a;
-	int	current_b;
-	int	index_maxa;
-	int	index_mina;
-	int	index_maxb;
-	int	index_minb;
-
-} t_stack;
-
 typedef struct s_curr 
 {
 	int	cur_a;
 	int	cur_b;
-	
+	int	tmp_moves;
 } t_curr;
 
 typedef struct s_push
@@ -51,10 +32,26 @@ typedef struct s_push
 	int	idx_a;
 	int	idx_b;
 	int	mv;
-	int tmp_moves;
-	int count_moves;
-	
 } t_push;
+
+typedef struct s_stack
+{
+	int		*a;
+	int		*b;
+	int		size_a;
+	int		size_b;
+	int		max_a;
+	int		min_a;
+	int		max_b;
+	int		min_b;
+	int		index_maxa;
+	int		index_mina;
+	int		index_maxb;
+	int		index_minb;
+	t_curr	tmp;
+	t_push	push;
+
+} t_stack;
 
 void	ft_error(void);
 
