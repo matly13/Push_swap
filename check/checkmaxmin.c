@@ -6,7 +6,7 @@
 /*   By: mbasile <mbasile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 09:50:41 by mbasile           #+#    #+#             */
-/*   Updated: 2023/08/04 18:38:35 by mbasile          ###   ########.fr       */
+/*   Updated: 2023/08/05 19:22:44 by mbasile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ int	check_sort(t_stack *stack)
 	int	i;
 
 	i = 0;
-	while(++i < stack->size_a)
+	while (++i < stack-> size_a)
 	{
 		if (stack->a[i] < stack->a[i - 1])
-			return(1);
+			return (1);
 	}
 	return (0);
 }

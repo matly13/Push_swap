@@ -6,7 +6,7 @@
 /*   By: mbasile <mbasile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 12:11:59 by mbasile           #+#    #+#             */
-/*   Updated: 2023/08/04 18:38:35 by mbasile          ###   ########.fr       */
+/*   Updated: 2023/08/05 19:17:54 by mbasile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	rra(t_stack *stack, int p)
 {
 	int	i;
 	int	tmp;
-	
+
 	i = stack->size_a - 1;
 	tmp = stack->a[i];
 	while (--i >= 0)
@@ -30,7 +30,7 @@ void	rrb(t_stack *stack, int p)
 {
 	int	i;
 	int	tmp;
-	
+
 	i = stack->size_b - 1;
 	tmp = stack->b[i];
 	while (--i >= 0)

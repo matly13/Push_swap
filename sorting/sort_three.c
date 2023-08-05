@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: martina <martina@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mbasile <mbasile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 15:41:26 by mbasile           #+#    #+#             */
-/*   Updated: 2023/08/04 10:54:01 by martina          ###   ########.fr       */
+/*   Updated: 2023/08/05 19:14:58 by mbasile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	sort_3(t_stack *stack)
 		ra(stack, 1);
 	}
 	else if (stack->max_a == 1 && stack->min_a == 2)
-		rra(stack, 1);	
+		rra(stack, 1);
 	else if (stack->max_a == 2 && stack->min_a == 1)
 		sa(stack, 1);
 }

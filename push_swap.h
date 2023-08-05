@@ -6,7 +6,7 @@
 /*   By: mbasile <mbasile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/26 12:22:56 by mbasile           #+#    #+#             */
-/*   Updated: 2023/08/05 11:39:00 by mbasile          ###   ########.fr       */
+/*   Updated: 2023/08/05 18:59:43 by mbasile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ typedef struct s_curr
 	int	cur_a;
 	int	cur_b;
 	int	tmp_moves;
-} t_curr;
+}	t_curr;
 
 typedef struct s_push
 {
 	int	idx_a;
 	int	idx_b;
 	int	mv;
-} t_push;
+}	t_push;
 
 typedef struct s_stack
 {
@@ -51,7 +51,7 @@ typedef struct s_stack
 	t_curr	tmp;
 	t_push	push;
 
-} t_stack;
+}	t_stack;
 
 void	ft_error(void);
 
@@ -77,17 +77,15 @@ void	sort_2(t_stack *stack);
 void	sorting(t_stack *stack);
 void	check_sorting(t_stack *stack);
 
-void	ft_close(t_stack *stack);
-void	ft_sorting_a(t_stack *stack);
+//void	ft_sorting_a(t_stack *stack);
 void	ft_first(t_stack *stack);
 int		ft_sorting(t_stack *stack);
 void	ft_pushing_to_a(t_stack *stack);
-void    ft_find_maxmin_a(t_stack *stack);
+void	ft_find_maxmin_a(t_stack *stack);
 void	final_sorting(t_stack *stack);
 
 t_push	ft_new_cheapest(int i, int tmp_b, t_push topush);
 t_push	ft_index_under(int i, int tmp_b, t_push topush);
 t_push	ft_index_over(t_stack *stack, int i, int tmp_b, t_push topush);
-
 
 #endif
