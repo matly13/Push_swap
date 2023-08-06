@@ -6,7 +6,7 @@
 /*   By: mbasile <mbasile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 18:56:27 by mbasile           #+#    #+#             */
-/*   Updated: 2023/08/05 20:33:31 by mbasile          ###   ########.fr       */
+/*   Updated: 2023/08/06 14:09:24 by mbasile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,15 +49,10 @@ void	checkdouble(t_stack *stack)
 
 void	check_sorting(t_stack *stack)
 {
-	// int	i;
-
-	// i = -1;
 	if (stack->size_a == 2)
 		sort_2(stack);
 	else if (stack->size_a == 3)
 		sort_3(stack);
 	else
 		sorting(stack);
-	// while (++i < stack->size_a)
-	// 	printf("A[%d] --> %d\n", i, stack->a[i]);
 }

@@ -6,7 +6,7 @@
 /*   By: mbasile <mbasile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/05 18:47:30 by mbasile           #+#    #+#             */
-/*   Updated: 2023/08/05 20:42:41 by mbasile          ###   ########.fr       */
+/*   Updated: 2023/08/06 14:11:02 by mbasile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,4 @@ void	sorting(t_stack *stack)
 		exec_mv_to_a(stack);
 	}
 	final_sort(stack);
-	int i = -1;
-	while (++i < stack->size_a)
-		printf("A[%d] --> %d\n", i, stack->a[i]);
 }

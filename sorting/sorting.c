@@ -6,7 +6,7 @@
 /*   By: mbasile <mbasile@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 11:24:41 by martina           #+#    #+#             */
-/*   Updated: 2023/08/05 19:06:13 by mbasile          ###   ########.fr       */
+/*   Updated: 2023/08/06 14:11:19 by mbasile          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,10 @@ void	count_mv_1(t_stack *stack)
 		case_2(stack);
 	else if (stack->tmp.cur_a < half_a && stack->tmp.cur_b >= half_b)
 		stack->tmp.tmp_moves = stack->tmp.cur_a
-			+ stack->size_b - stack->tmp.cur_b;
-	else if (stack->tmp.cur_a >= half_a && stack->tmp.cur_b >= half_b)
+			+ (stack->size_b - stack->tmp.cur_b);
+	else if (stack->tmp.cur_a >= half_a && stack->tmp.cur_b < half_b)
 		stack->tmp.tmp_moves = stack->tmp.cur_b
-			+ stack->size_a - stack->tmp.cur_a;
+			+ (stack->size_a - stack->tmp.cur_a);
 	if (stack->tmp.cur_a == 0 || stack->tmp.tmp_moves < stack->push.mv)
 		save_push_b(stack);
 }
